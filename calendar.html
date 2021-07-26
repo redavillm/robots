@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script>
+        let i = 0;
+        const containerEl = document.querySelector('.container');
+        // от 1 до 4 включительно
+        for (let weekNum = 1; weekNum <= 4; weekNum++) {
+            // создание элемента недели
+            const weekEl = document.createElement('div');
+            weekEl.classList.add('week');
+            // от 1 до 7 включительно
+            for (let dayName of [
+                'понедельник',
+                'вторник',
+                'среда',
+                'четверг',
+                'пятница',
+                'суббота',
+                'воскресенье'
+            ]) {
+                i++;
+                // создание элемента дня
+                const dayEl = document.createElement('div');
+                dayEl.classList.add('day');
+                // добавление информации внутрь div дня
+                dayEl.innerHTML = `
+                <span>${i} фев</span>
+                <span>${dayName}</span>
+                `;
+                // добавить div дня в div недели
+                weekEl.append(dayEl);
+            }
+            // добавить div недели в контейнер
+            containerEl.append(weekEl);
+        }
+
+      // от 1 до 4 включительно
+      // вызвать функцию создания элемента недели
+        // создание div недели
+        // от 1 до 7 включительно
+        // вызвать фукнцию создания элемента дня
+          // создание div дня
+          // добавление информации внутрь div дня
+          // добавить div дня в div недели
+        // добавить div недели в контейнер
+    </script>
+    <style>
+      .container {
+        width: 960px;
+        margin: 0 auto;
+      }
+      .week {
+        display: flex;
+      }
+      .day {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid #eee;
+        min-height: 50px;
+      }
+    </style>
+</body>
+
+</html>
